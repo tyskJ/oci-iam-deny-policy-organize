@@ -165,7 +165,7 @@ IAM Policy - for Group
 resource "oci_identity_policy" "group_admin" {
   compartment_id = oci_identity_compartment.workload.id
   description    = "Privileges Administrator"
-  name           = "admin-restrict-source-ip-policy"
+  name           = "admin-privileges-policy"
   statements = [
     format("allow group %s/%s to manage all-resources in compartment %s",
       oci_identity_domain.this.display_name,
