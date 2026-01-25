@@ -34,7 +34,7 @@ resource "oci_identity_policy" "group_admin" {
   description    = "Privileges Administrator"
   name           = "admin-privileges-policy"
   statements = [
-    format("allow group Default/'%s' to manage all-resources in tenancy",
+    format("allow group '%s' to manage all-resources in tenancy",
       oci_identity_group.this.name
     ),
   ]
